@@ -269,6 +269,17 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
             background: #4b5563;
         }
 
+        .btn-danger {
+            background: #dc2626;
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .btn-danger:hover {
+            background: #b91c1c;
+        }
+
         .stats {
             padding: 20px 30px;
             background: #f1f5f9;
@@ -698,6 +709,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
                         html += '<button class="btn btn-secondary" onclick="toggleTaskCompletion(' + task.id + ')">Mark Pending</button>';
                     }
                     html += '<button class="btn btn-secondary" onclick="editTask(' + task.id + ')">Edit</button>';
+                    html += '<button class="btn btn-danger" onclick="deleteTask(' + task.id + ')">Delete</button>';
                     html += '</div>';
                     html += '</div>';
                     html += '</div>';
@@ -773,6 +785,21 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
         function closeTaskModal() {
             document.getElementById('taskModal').style.display = 'none';
+        }
+
+        async function deleteTask(taskId) {
+            if (confirm('Are you sure you want to delete this task? This action cannot be undone.')) {
+                try {
+                    const response = await fetch('/api/tasks/' + taskId, {
+                        method: 'DELETE',
+                    });
+                    if (response.ok) {
+                        loadTasks();
+                    }
+                } catch (error) {
+                    console.error('Error deleting task:', error);
+                }
+            }
         }
 
         document.getElementById('taskForm').addEventListener('submit', async function(e) {
