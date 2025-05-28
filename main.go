@@ -134,8 +134,8 @@ func main() {
 	http.HandleFunc("/api/tasks", tasksHandler)
 	http.HandleFunc("/api/tasks/", taskHandler)
 
-	fmt.Println("🚀 AMSKU Task Management Server starting on http://localhost:80")
-	log.Fatal(http.ListenAndServe(":80", nil))
+	fmt.Println("🚀 AMSKU Task Management Server starting on http://localhost:8000")
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
