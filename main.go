@@ -116,12 +116,102 @@ func initializeTasks() {
 			Notes:     "Between Liz and Tariro for scheduling",
 			CreatedAt: time.Now(),
 		},
+		// New tasks from transcript
+		{
+			ID:        9,
+			Title:     "Clarify Liz's role in resident onboarding workflow",
+			Type:      "Immediate Tasks (24-48 hours)",
+			Owner:     "Liz & Colin",
+			Priority:  "High",
+			Completed: false,
+			Notes:     "Determine if Liz's info goes in welcome email, separate intro email, or both. Resolve redundancy concerns.",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        10,
+			Title:     "Implement Liz's automated welcome email in workflow",
+			Type:      "Process Improvement Tasks (1-2 weeks)",
+			Owner:     "Endri",
+			Priority:  "Medium",
+			Completed: false,
+			Notes:     "Add Liz's intro email to step 8 after payment confirmation, pending Colin's decision on timing",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        11,
+			Title:     "Train Liz on Zoho CRM functionality",
+			Type:      "Immediate Tasks (24-48 hours)",
+			Owner:     "Tariro",
+			Priority:  "Medium",
+			Completed: false,
+			Notes:     "Scheduled for tomorrow at 7:00 AM - focus on Calendly integration and scheduling features",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        12,
+			Title:     "Fix Ryan's Calendly schedule - Wednesday Peoria training",
+			Type:      "Immediate Tasks (24-48 hours)",
+			Owner:     "Tariro",
+			Priority:  "High",
+			Completed: false,
+			Notes:     "Correct Wednesday availability to 7:00 AM - 12:00 PM only. Remove incorrect Monday/Tuesday/Friday availability.",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        13,
+			Title:     "Fix Ryan's Calendly schedule - Friday Doctor Hernandez time",
+			Type:      "Immediate Tasks (24-48 hours)",
+			Owner:     "Tariro",
+			Priority:  "High",
+			Completed: false,
+			Notes:     "Correct Friday availability to 1:00 PM - 4:00 PM only. Remove incorrect other day availability.",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        14,
+			Title:     "Update Ryan's time off - Florida trip June 16-18",
+			Type:      "Immediate Tasks (24-48 hours)",
+			Owner:     "Tariro",
+			Priority:  "Medium",
+			Completed: false,
+			Notes:     "Add June 16-18 time off, ensure availability June 19-20. Check June 24 Tuesday availability issue.",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        15,
+			Title:     "Implement Calendly overlap prevention procedures",
+			Type:      "Process Improvement Tasks (1-2 weeks)",
+			Owner:     "Tariro & Liz",
+			Priority:  "High",
+			Completed: false,
+			Notes:     "Create hard stops and verification steps to prevent scheduling conflicts like Greg situation",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        16,
+			Title:     "Document resident onboarding workflow clarifications",
+			Type:      "Process Improvement Tasks (1-2 weeks)",
+			Owner:     "Endri",
+			Priority:  "Medium",
+			Completed: false,
+			Notes:     "Update workflow documentation based on Colin's decisions about Liz's role and email timing",
+			CreatedAt: time.Now(),
+		},
+		{
+			ID:        17,
+			Title:     "Establish Liz as primary Calendly administrator",
+			Type:      "Process Improvement Tasks (1-2 weeks)",
+			Owner:     "Tariro & Liz",
+			Priority:  "Medium",
+			Completed: false,
+			Notes:     "Train Liz to take over Calendly management to prevent future scheduling issues",
+			CreatedAt: time.Now(),
+		},
 	}
 
 	taskManager.Tasks = tasks
-	taskManager.NextID = 9
+	taskManager.NextID = 18
 }
-
 func main() {
 	// Initialize tasks
 	initializeTasks()
